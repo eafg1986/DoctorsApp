@@ -73,8 +73,8 @@ public class ReservationService {
 
     public ReservationReport getReservationStatusReport(){
         List<Reservation> completed = reservationRepository.getReservationByStatus("completed");
-        List<Reservation> canceled = reservationRepository.getReservationByStatus("canceled");
-        return new ReservationReport(completed.size(), canceled.size());
+        List<Reservation> cancelled = reservationRepository.getReservationByStatus("cancelled");
+        return new ReservationReport(completed.size(), cancelled.size());
     }
 
     public List<Reservation> getReservationPeriod(String dateA, String dateB){
